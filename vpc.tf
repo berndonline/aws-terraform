@@ -107,17 +107,17 @@ resource "aws_eip" "natgw_c" {
 }
 resource "aws_nat_gateway" "public_nat_a" {
     allocation_id = "${aws_eip.natgw_a.id}"
-    subnet_id = "${aws_subnet.PrivateSubnetA.id}"
+    subnet_id = "${aws_subnet.PublicSubnetA.id}"
     depends_on = ["aws_internet_gateway.gw"]
 }
 resource "aws_nat_gateway" "public_nat_b" {
     allocation_id = "${aws_eip.natgw_b.id}"
-    subnet_id = "${aws_subnet.PrivateSubnetB.id}"
+    subnet_id = "${aws_subnet.PublicSubnetB.id}"
     depends_on = ["aws_internet_gateway.gw"]
 }
 resource "aws_nat_gateway" "public_nat_c" {
     allocation_id = "${aws_eip.natgw_c.id}"
-    subnet_id = "${aws_subnet.PrivateSubnetC.id}"
+    subnet_id = "${aws_subnet.PublicSubnetC.id}"
     depends_on = ["aws_internet_gateway.gw"]
 }
 
