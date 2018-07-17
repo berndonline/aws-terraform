@@ -1,11 +1,3 @@
-# Specify the provider and access details
-provider "aws" {
-  region = "${var.aws_region}"
-}
-
-# Declare the data source
-data "aws_availability_zones" "available" {}
-
 # Create a VPC to launch our instances into
 resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
